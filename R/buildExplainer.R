@@ -54,11 +54,11 @@
 #' showWaterfall(xgb.model, explainer, xgb.test.data, test.data,  8, type = "binary")
 
 
-buildExplainer = function(xgb.model, trainingData, type = "binary", base_score = 0.5){ ###, trees_idx = NULL){
+buildExplainer = function(xgb.model, trainingData, type = "binary", base_score = 0.5, trees_idx = NULL){
 
   col_names = attr(trainingData, ".Dimnames")[[2]]
   cat('\nCreating the trees of the xgboost model...')
-  trees = xgb.model.dt.tree(col_names, model = xgb.model, trees = trees_idx)
+  trees = xgb.model.dt.tree(col_names, model = xgb.model) ###, trees = trees_idx)
   cat('\nGetting the leaf nodes for the training set observations...')
   nodes.train = predict(xgb.model,trainingData,predleaf =TRUE)
 
