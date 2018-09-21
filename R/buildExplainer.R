@@ -54,7 +54,7 @@
 #' showWaterfall(xgb.model, explainer, xgb.test.data, test.data,  8, type = "binary")
 
 
-buildExplainer = function(xgb.model, trainingData, type = "binary", base_score = 0.5, trees_idx = NULL){
+buildExplainer = function(xgb.model, trainingData, type = "binary", base_score = 0.5){ ###, trees_idx = NULL){
 
   col_names = attr(trainingData, ".Dimnames")[[2]]
   cat('\nCreating the trees of the xgboost model...')
