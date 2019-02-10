@@ -15,7 +15,7 @@ getTreeBreakdown = function(tree, col_names){
 
     leaf_breakdown = getLeafBreakdown(tree,leaf,col_names)
     leaf_breakdown$leaf = leaf
-    tree_breakdown = rbindlist(append(list(tree_breakdown),list(leaf_breakdown)))
+    tree_breakdown = rbindlist(append(list(tree_breakdown),list(leaf_breakdown)), fill = TRUE)
   }
 
   return (tree_breakdown)
