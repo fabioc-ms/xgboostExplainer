@@ -19,7 +19,7 @@ buildExplainerFromTreeList = function(tree_list,col_names){
     tree = tree_list[[x]]
     tree_breakdown = getTreeBreakdown(tree, col_names)
     tree_breakdown$tree = x - 1
-    tree_list_breakdown = rbindlist(append(list(tree_list_breakdown),list(tree_breakdown)))
+    tree_list_breakdown = rbindlist(append(list(tree_list_breakdown),list(tree_breakdown)), fill = TRUE)
     setTxtProgressBar(pb, x / num_trees)
   }
   
